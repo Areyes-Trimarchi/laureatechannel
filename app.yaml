@@ -1,0 +1,24 @@
+application: laureatechannel
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+#handlers:
+#- url: /assets
+#  static_dir: static
+
+#- url: /(index)?
+#  upload: index.html
+#    static_files: index.html
+
+#- url: /bootstrap
+#  static_dir: bootstrap
+
+handlers:
+- url: .*
+  script: main.app
+
+#libraries:
+#- name: webapp2
+#  version: latest
