@@ -2,7 +2,7 @@ import webapp2
 import os
 import jinja2
 
-from googleapipythonclient import build
+from googleapiclient import build
 from googleapipythonclient import HttpError
 from oauth2client.tools import argparser
 
