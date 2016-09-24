@@ -10,7 +10,7 @@ template_env = jinja2.Environment(
 class RequestPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
-		login_url = users.create_login_url(self.request.path)
+        login_url = users.create_login_url(self.request.path)
         logout_url = users.create_logout_url(self.request.path)
 
         template = template_env.get_template('home.html')
