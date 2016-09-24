@@ -2,8 +2,8 @@ import webapp2
 import os
 import jinja2
 
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
+from google-api-python-client.discovery import build
+from google-api-python-client.errors import HttpError
 from oauth2client.tools import argparser
 
 DEVELOPER_KEY = "AIzaSyBmjjEjlr2FfvxyTX4OR6Ljgk_WkvWTcPw"
