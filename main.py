@@ -1,8 +1,8 @@
 import webapp2
 import json
 from oauth2client.tools import argparser
-from apiclient.discovery import build
-from apiclient.errors import HttpError
+from googleapiclient import discovery
+from googleapiclient import errors
 
 DEVELOPER_KEY = "AIzaSyBmjjEjlr2FfvxyTX4OR6Ljgk_WkvWTcPw"
 YOUTUBE_API_SERVICE_NAME = "youtube"
@@ -10,11 +10,10 @@ YOUTUBE_API_VERSION = "v3"
 
 class MainHandler(webapp2.RequestHandler):
   def youtube_search(options):
-    youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-    developerKey=DEVELOPER_KEY)
+    youtube = discovery.build("youtube","v3",developerKey="AIzaSyBmjjEjlr2FfvxyTX4OR6Ljgk_WkvWTcPw")
 
     search_response = youtube.search().list(
-      q = options.q,
+      q = "UCvS6-K6Ydmb4gH-kim3AmjA",
       part = "id,snippet",
       maxResults = 50,
     ).execute()
@@ -45,7 +44,7 @@ class MainHandler(webapp2.RequestHandler):
 
     try:
       youtube_search(args)
-    except HttpError, e:
+    except error.HttpError, e:
       print "An HTTP error %d occurred:\n%s" % (e.resp.status, e.content)
 
 app = webapp2.WSGIApplication([('/',MainHandler),
