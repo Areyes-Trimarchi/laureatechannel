@@ -17,7 +17,7 @@ class MainHandler(webapp2.RequestHandler):
     json_data = json.dumps(data)
     print(json_data)
 
-app = webapp2.WSGIApplication([('/',MainHandler),
+application = webapp2.WSGIApplication([('/',MainHandler),
                               ],debug = True)
 
 main = MainHandler()
