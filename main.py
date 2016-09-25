@@ -15,7 +15,7 @@ class MainHandler(webapp2.RequestHandler):
     data = {}
     data['response']= search_response.read()
     json_data = json.dumps(data)
-    self.response(json_data)
+    self.response("Hi there")
     print(json_data)
 
 application = webapp2.WSGIApplication([('/',MainHandler),
