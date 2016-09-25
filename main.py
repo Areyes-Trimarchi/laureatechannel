@@ -17,7 +17,8 @@ class MainHandler(webapp2.RequestHandler):
     json_data = json.dumps(data)
     print(json_data)
 
-main = MainHandler()
-main.youtube_search("Robotics","")
 app = webapp2.WSGIApplication([('/',MainHandler),
                               ],debug = True)
+
+main = MainHandler()
+main.youtube_search("Robotics","")
