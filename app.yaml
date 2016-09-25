@@ -28,5 +28,5 @@ libraries:
   version: latest
 - name: webob
   version: latest
-- name: google-api-python-client
+- name: google-api-client
   version: latest
