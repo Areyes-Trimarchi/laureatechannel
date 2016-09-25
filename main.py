@@ -6,7 +6,6 @@ class MainHandler(webapp2.RequestHandler):
   DEVELOPER_KEY = "AIzaSyBmjjEjlr2FfvxyTX4OR6Ljgk_WkvWTcPw"
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"
-  def get(self):
 
   def youtube_search(options):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
