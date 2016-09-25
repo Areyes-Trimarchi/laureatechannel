@@ -2,8 +2,6 @@ import webapp2
 import json
 from apiclient.discovery import build
 
-service = build('api_name', 'api_version', ...)
-
 class MainHandler(webapp2.RequestHandler):
   DEVELOPER_KEY = "AIzaSyBmjjEjlr2FfvxyTX4OR6Ljgk_WkvWTcPw"
   YOUTUBE_API_SERVICE_NAME = "youtube"
