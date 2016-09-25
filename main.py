@@ -1,12 +1,14 @@
 import webapp2
 import json
 from apiclient.discovery import build
+from oauth2client.tools import argparser
+from apiclient.errors import HttpError
+
+DEVELOPER_KEY = "AIzaSyBmjjEjlr2FfvxyTX4OR6Ljgk_WkvWTcPw"
+YOUTUBE_API_SERVICE_NAME = "youtube"
+YOUTUBE_API_VERSION = "v3"
 
 class MainHandler(webapp2.RequestHandler):
-  DEVELOPER_KEY = "AIzaSyBmjjEjlr2FfvxyTX4OR6Ljgk_WkvWTcPw"
-  YOUTUBE_API_SERVICE_NAME = "youtube"
-  YOUTUBE_API_VERSION = "v3"
-
   def youtube_search(options):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
     developerKey=DEVELOPER_KEY)
@@ -36,15 +38,15 @@ class MainHandler(webapp2.RequestHandler):
     print "Channels:\n", "\n".join(channels), "\n"
     print "Playlists:\n", "\n".join(playlists), "\n"
 
-if __name__ == "__main__":
-  argparser.add_argument("--q", help="Search term", default="Google")
-  argparser.add_argument("--max-results", help="Max results", default=25)
-  args = argparser.parse_args()
+  if __name__ == "__main__":
+    argparser.add_argument("--q", help="Search term", default="Google")
+    argparser.add_argument("--max-results", help="Max results", default=25)
+    args = argparser.parse_args()
 
-  try:
-    youtube_search(args)
-  except HttpError, e:
-    print "An HTTP error %d occurred:\n%s" % (e.resp.status, e.content)
+    try:
+      youtube_search(args)
+    except HttpError, e:
+      print "An HTTP error %d occurred:\n%s" % (e.resp.status, e.content)
 
 app = webapp2.WSGIApplication([('/',MainHandler),
                               ],debug = True)
