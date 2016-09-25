@@ -2,7 +2,7 @@ import webapp2
 import json
 import urllib
 
-DEVELOPER_KEY = "AIzaSyAFM-ucrRbBBI8HYaf5Lk08tYLpjaBya34"
+DEVELOPER_KEY = "AIzaSyBiORXw-clppwKozQSbmZqydDMK0UDL6xk"
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 CHANNEL_ID = "UCvS6-K6Ydmb4gH-kim3AmjA"
