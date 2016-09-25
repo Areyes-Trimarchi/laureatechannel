@@ -28,5 +28,3 @@ libraries:
   version: latest
 - name: webob
   version: latest
-- name: google-api-client
-  version: latest
